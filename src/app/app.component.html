@@ -49,26 +49,31 @@
     background: black;
   }
 
+  .page-content {
+    padding: 40px 50px;
+  }
+
   .side-bar {
-    width: 280px;
+    min-width: 280px;
     background: #031C43;
     height: calc(100vh - 120px);
     padding-top: 20px;
+    padding-left: 10px;
   }
   .side-bar li {
     font-size: 16px;
     padding-bottom: 10px;
+    position: relative;
   }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
+  .side-bar li::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: solid 2px #DD0031;
+    border-radius: 50%;
+    position: absolute;
+    left: -43px;
+    top: 2px;
   }
 
   /* Responsive Styles */
@@ -125,8 +130,10 @@
     </ol>
   </div>
   
-
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
 
 </div>
 
-<router-outlet></router-outlet>
+
