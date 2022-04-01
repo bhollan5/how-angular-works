@@ -39,6 +39,7 @@
   .toolbar h1 {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   .content {
@@ -59,11 +60,13 @@
     height: calc(100vh - 120px);
     padding-top: 20px;
     padding-left: 10px;
+    box-sizing: border-box;
   }
   .side-bar li {
     font-size: 16px;
     padding-bottom: 10px;
     position: relative;
+    cursor: pointer;
   }
   .side-bar li::after {
     content: '';
@@ -74,6 +77,9 @@
     position: absolute;
     left: -43px;
     top: 2px;
+  }
+  .side-bar li.active-link::after {
+    background: #DD0031;
   }
 
   /* Responsive Styles */
@@ -108,7 +114,7 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <h1>
+  <h1 routerLink="/">
     <span>How</span>
     <img
       alt="Angular Logo"
@@ -122,11 +128,21 @@
 <div class="content" role="main">
   <div class="side-bar">
     <ol>
-      <li>What is AngularJS?</li>
-      <li>Basic AngularJS use cases</li>
-      <li>Direct injections</li>
-      <li>Angular router</li>
-      <li>Deploying Angular apps</li>
+      <li routerLinkActive="active-link" routerLink="/what-is-angular">
+        What is Angular?
+      </li>
+      <li routerLinkActive="active-link" routerLink="/basics-of-angular">
+        Basics of Angular
+      </li>
+      <li routerLinkActive="active-link" routerLink="/direct-injections">
+        Direct injections
+      </li>
+      <li routerLinkActive="active-link" routerLink="/angular-router">
+        Angular router
+      </li>
+      <li routerLinkActive="active-link" routerLink="/deploying">
+        Deploying Angular apps
+      </li>
     </ol>
   </div>
   
